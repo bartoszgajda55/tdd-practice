@@ -1,8 +1,7 @@
 import main.java.com.bartoszgajda.ValidateISBN;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ValidateISBNTest {
 
@@ -20,9 +19,10 @@ class ValidateISBNTest {
     assertFalse(result);
   }
 
-  @Test(expected = NumberFormatException.class)
+  @Test
   public void checkIfIsTenDigits() {
     ValidateISBN validator = new ValidateISBN();
-    validator.checkISBN("123456789");
+    boolean result = validator.checkISBN("123456789");
+    assertThrows(NumberFormatException.class, fail());
   }
 }
