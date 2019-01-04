@@ -21,8 +21,14 @@ class ValidateISBNTest {
 
   @Test
   public void checkIfIsTenDigits() {
+//    ValidateISBN validator = new ValidateISBN();
+//    boolean result = validator.checkISBN("123456789");
+//    assertThrows(NumberFormatException.class, fail());
+  }
+
+  @Test
+  public void nonNumbericISBNsAreNotAllowed() {
     ValidateISBN validator = new ValidateISBN();
-    boolean result = validator.checkISBN("123456789");
-    assertThrows(NumberFormatException.class, fail());
+    validator.checkISBN("helloworld");
   }
 }
