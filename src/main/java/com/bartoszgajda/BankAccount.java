@@ -5,10 +5,16 @@ public class BankAccount {
   private String lastName;
   private double balance;
 
-  public BankAccount(String firsName, String lastName, double balance) {
+  public static final int CHECKING = 1;
+  public static final int SAVINGS = 2;
+
+  private int accountType;
+
+  public BankAccount(String firsName, String lastName, double balance, int accountType) {
     this.firsName = firsName;
     this.lastName = lastName;
     this.balance = balance;
+    this.accountType = accountType;
   }
 
   /**
@@ -41,5 +47,9 @@ public class BankAccount {
 
   public double getBalance() {
     return balance;
+  }
+
+  public boolean isChecking() {
+    return accountType == CHECKING;
   }
 }
